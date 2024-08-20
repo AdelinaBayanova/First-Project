@@ -1,47 +1,22 @@
-/*
-1.	В чемпионате по футболу команде за выигрыш дается 3 очка,
-за проигрыш — 0, за ничью — 1. Известно количество очков, полученных
-командой за игру. Определить словесный результат игры (выигрыш, проигрыш или ничья).
-*/
+package lesson_3;
+
 import java.util.Scanner;
-public class Task1 {
+
+public class Task4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("введите количество очков");
-        int point = sc.nextInt();
+        System.out.println("введите число n");
+        int n = sc.nextInt();
         sc.close();
-        if (point == 0) {
-            System.out.println("проигрыш");
-        } else if (point == 1) {
-            System.out.println("ничья");
-        } else if (point == 3)
-            System.out.println("выигрыш");
+        function(n);
+    }
+
+    public static void function(int n) {
+        double result = 0.0;
+        for (int i = 1; i <= n; i++) {
+            result += 1.0 / i;
+//          result = result + 1.0 / i;
+        }
+        System.out.println("Сумма равна " + result);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

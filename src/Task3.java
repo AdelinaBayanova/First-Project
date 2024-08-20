@@ -1,23 +1,37 @@
-import java.util.Scanner;
-/*
-3. Дано двузначное число. Определить : остаток от
-деления десятков на единицы, результат деления единиц
-на десятки.
-*/
-public class Task3 {
+package lesson_4;
+
+public class Task6 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("введите двухзначное число\n");
-        int number = sc.nextInt();
-        sc.close();
+        int[][] array = new int[3][5];
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 4; j++) {
+                array[i][j] = j + 1;
+            }
+        }
 
-        int units = number % 10;
-        int decimals = number / 10;
+        array[1][2] = -25;
 
-        int res1 = decimals % units;
-        System.out.println("остаток от деления десятков на единиц равен "+res1);
-        double res2 = (double) units / decimals;
-        System.out.println("результат деления единиц на десятки равен "+res2);
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 4; j++) {
+                System.out.print(" " + array[i][j] + " ");
+            }
+            System.out.println();
+        }
 
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 4; j++) {
+                if (min > array[i][j]) {
+                    min = array[i][j];
+                }
+                if (max < array[i][j]) {
+                    max = array[i][j];
+                }
+            }
+        }
+        System.out.println("Минимальное значение равно " + min);
+        System.out.println("Максимальное значение равно " + max);
     }
 }
